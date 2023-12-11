@@ -10,8 +10,7 @@
     "preinstall": "concurrently \"yarn m1:preinstall\"",
     "m1:start": "yarn --cwd m1 start:debug",
     "m2:start": "yarn --cwd m2 start:debug",
-    "start": "concurrently \"yarn m1:start\""
-
+    "start": "concurrently \"yarn m1:start\" \"yarn m2:start\""
   },
   "author": "",
   "license": "ISC",

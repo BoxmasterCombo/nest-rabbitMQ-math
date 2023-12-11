@@ -18,7 +18,6 @@ async function bootstrap() {
 
   app.useGlobalPipes(new ValidationPipe({ transform: true, whitelist: true }));
   app.setGlobalPrefix('/api');
-
   // TODO: Add logger
 
   await app.listen(PORT);

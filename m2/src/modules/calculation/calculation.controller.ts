@@ -1,14 +1,14 @@
-import {Body, Controller, Post} from '@nestjs/common';
-import {CalculateDto} from "./dto/calculateDto";
+import {Controller} from '@nestjs/common';
 import {CalculationService} from "./calculation.service";
-import {Observable} from "rxjs";
+import {MessagePattern} from "@nestjs/microservices";
+import {CalculateDto} from "./dto/calculateDto";
 
 @Controller('calculation')
 export class CalculationController {
     constructor(private readonly calculationService: CalculationService) {}
 
-    @Post()
-    async calculate(@Body() body:CalculateDto): Promise<Observable<number>> {
+    @MessagePattern({ cmd: 'double' })
+    async doubleValue(body: CalculateDto): Promise<number> {
         return this.calculationService.calculate(body);
     }
 }
