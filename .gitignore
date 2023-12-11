@@ -1,7 +1,10 @@
 .env
 
-./m1/node_modules
-./m1/dist
+/node_modules
+/.idea
 
-./m2/node_modules
-./m2/dist
+m1/node_modules
+m1/dist
+
+m2/node_modules
+m2/dist
