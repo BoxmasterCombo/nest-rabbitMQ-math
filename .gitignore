@@ -1,0 +1,7 @@
+.env
+
+./m1/node_modules
+./m1/dist
+
+./m2/node_modules
+./m2/dist
