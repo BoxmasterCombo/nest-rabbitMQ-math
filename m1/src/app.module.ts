@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { CalculationModule } from "./modules/calculation/calculation.module";
-import {ClientsModule, Transport} from "@nestjs/microservices";
+import { LoggerModule } from "./common/logger/logger.module";
 
 @Module({
-  imports: [CalculationModule],
+  imports: [CalculationModule, LoggerModule],
   controllers: [],
   providers: [],
 })

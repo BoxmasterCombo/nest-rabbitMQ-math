@@ -7,16 +7,15 @@ async function bootstrap() {
     transport: Transport.RMQ,
     options: {
       urls:['amqp://localhost:5672'],
-      // queue: 'calculations_queue',
-      // queueOptions: {
-      //   durable: false
-      // }
+      queue: 'calculations_queue',
+      prefetchCount: 1,
+      queueOptions: {
+        durable: false
+      }
     }
   })
   await app.listen();
 }
-bootstrap()
-    .then(() => console.log(`Microservice is running`))
-    .catch(console.error);
+bootstrap().catch(console.error);
 
 
